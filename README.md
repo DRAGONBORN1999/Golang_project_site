@@ -13,11 +13,11 @@
 При этом у вас должен быть установлен Golang: https://go.dev/doc/install
 
 ## Примеры запроса и возможные ошибки
-1. Пример верного запроса: ```curl -X POST -H "Content-Type: application/json" -d '{"expression": "10+2"}' http://localhost:8080/api/v1/calculate```.
+1. Пример верного запроса: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"expression\": \"10+2\"}"```.
 При этом будет получен ответ: ```{"result":12}```
-2. Пример неверного запроса: ```curl -X POST -H "Content-Type: application/json" -d "{\"тфьу\": \"10+2\"}" http://localhost:8080/api/v1/calculate```.
+2. Пример неверного запроса: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"name\": \"2+2\"}"```.
 При этом будет получен ответ: ```{"error":"Bad request"}```
-3. Пример неверного выражения: ```curl -X POST -H "Content-Type: application/json" -d "{\"expression\": \"ssssss\"}" http://localhost:8080/api/v1/calculate```.
+3. Пример неверного выражения: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"expression\": \"sssss\"}"```.
 При этом будет получен ответ: ```{"error":"Expression is not valid"}```, то есть, если выражение некорректно (присутствуют сторонние символы помимо цифр, символов операций и скобок), возвращается ошибка.
 
 ## Структура проекта
