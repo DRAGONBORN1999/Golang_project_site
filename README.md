@@ -10,6 +10,6 @@
    ```go run ./cmd/main.go```
 3. После этого можно посылать запросы
 
-При этом у вас должен быть установлен Golang: ![Установка](https://img.shields.io/github/issues/OkulusDev/Oxygen)
+При этом у вас должен быть установлен Golang: ![Установка](https://go.dev/doc/install)
 
 ##
