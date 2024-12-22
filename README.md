@@ -13,11 +13,11 @@
 При этом у вас должен быть установлен Golang: https://go.dev/doc/install
 
 ## Примеры запроса и возможные ошибки
-1. Пример верного запроса: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"expression\": \"10+2\"}"```.
+1. Пример верного запроса: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"expression\": \"10+2\"}"``` (работает для командной строки).
 При этом будет получен ответ: ```{"result":12}```
-2. Пример неверного запроса: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"name\": \"2+2\"}"```.
+2. Пример неверного запроса: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"name\": \"2+2\"}"``` (работает для командной строки).
 При этом будет получен ответ: ```{"error":"Bad request"}```
-3. Пример неверного выражения: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"expression\": \"sssss\"}"```.
+3. Пример неверного выражения: ```curl -X POST -L "http://localhost:8080/api/v1/calculate" -H "Content-Type: application/json" -d "{\"expression\": \"sssss\"}"``` (работает для командной строки).
 При этом будет получен ответ: ```{"error":"Expression is not valid"}```, то есть, если выражение некорректно (присутствуют сторонние символы помимо цифр, символов операций и скобок), возвращается ошибка.
 
 ## Структура проекта
