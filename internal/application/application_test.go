@@ -33,16 +33,16 @@ func TestCalcHandler(t *testing.T) {
 		{
 			name:             "Неправильный запрос",
 			method:           http.MethodGet,
-			body:             nil,
+			body:             map[string]string{"name": "2 + 2"},
 			expectedStatus:   http.StatusMethodNotAllowed,
-			expectedResponse: `{"error":"Bad request"}`,
+			expectedResponse: `{"error":"Expression is not valid"}`,
 		},
 		{
 			name:             "Некорректный запрос",
 			method:           http.MethodPost,
 			body:             "invalid body",
 			expectedStatus:   http.StatusBadRequest,
-			expectedResponse: `{"error":"Expression is not valid"}`,
+			expectedResponse: `{"error":"Bad request"}`,
 		},
 	}
 
